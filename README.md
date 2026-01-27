@@ -1,25 +1,172 @@
-# Adm Folder
+# Applying ANOVA in Crossover Trials
+
+[![Deploy ARTE Template](https://github.com/phdpablo/anova-tutorial/actions/workflows/deploy.yml/badge.svg)](https://github.com/phdpablo/anova-tutorial/actions/workflows/deploy.yml)
+[![DOI](https://img.shields.io/badge/DOI-10.17605%2FOSF.IO%2F3RXF2-blue)](https://doi.org/10.17605/OSF.IO/3RXF2)
+[![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 
 ## Overview
 
-The `Adm` (Administration) folder serves as a secure and organized space for project-related materials that should not be included in version control or public sharing. This folder is specifically excluded from Git tracking (via `.gitignore`) and is not published to platforms like GitHub Pages. It centralizes sensitive, temporary, local, and administrative files, keeping the main project repository clean and focused on the core, reproducible components.
+This repository contains a **dynamic and reproducible tutorial** on applying Analysis of Variance (ANOVA) in crossover trials within the context of randomized clinical trials related to physiotherapy and rehabilitation. The tutorial is implemented as an interactive document using R, RStudio, and Quarto, following open science principles and best practices for reproducible research.
 
-## Contents
+**📖 Live Tutorial:** [https://phdpablo.github.io/anova-tutorial/](https://phdpablo.github.io/anova-tutorial/)
 
--   **Sensitive and Confidential Data**: Personal information of participants, financial records, contracts, non-disclosure agreements (NDAs), and other private documents.
--   **Temporary and Work-in-Progress Files**: Drafts, notes, "to-do" lists, meeting minutes, and intermediary files (e.g., source files for external illustrations).
--   **Local Environment Files**: Machine-specific configurations, credentials, API keys, or local database connection strings.
--   **Project Management Documents**: Budgets, timelines, resource allocation plans, and internal administrative records.
--   **Non-Essential Project Files**: Files related to the project but not required for its technical execution or reproduction, such as articles written in a native language or personal organizational tools.
+## Project Goals
 
-## Guidelines
+- Conduct comprehensive research on ANOVA methods for crossover designs in clinical trials
+- Provide a hands-on, reproducible tutorial for analyzing crossover data
+- Demonstrate best practices for transparent and reproducible research in R
+- Offer practical examples relevant to physiotherapy and rehabilitation research
 
--   **Exclusion from Version Control**: The `Adm` folder is intentionally ignored by Git. Do not place files here that are necessary for the reproducibility of your research project's core analysis.
--   **Security for Sensitive Data**: Store all sensitive and confidential information within this folder to prevent accidental public exposure.
--   **Organization of Temporary Files**: Use this folder for any documents or files that are frequently updated, temporary in nature, or not suitable for the main project history.
--   **Local Configuration Storage**: Keep any local environment setup files or secrets in this folder to avoid committing them to the shared repository.
--   **Project Administration**: Centralize internal project management documents here to separate them from the technical project files.
+## Features
 
-## Additional Resources
+- **Fully Reproducible:** All analyses can be reproduced using provided data, scripts, and computational environment
+- **Dynamic Document:** Interactive tutorial built with Quarto that combines narrative, code, and results
+- **Containerized Environment:** Docker support ensures computational reproducibility across platforms
+- **Open Science Compliant:** Follows FAIR principles and open science practices
+- **Version Controlled:** Complete project history available through Git
+- **Automated Deployment:** GitHub Actions workflow for continuous deployment
 
-While the `Adm` folder is excluded from the TIER Protocol's core reproducibility structure, its use supports good project hygiene. For general project organization principles, refer to the [TIER Protocol 4.0](https://www.projecttier.org/tier-protocol/protocol-4-0/).
+## Repository Structure
+
+```
+anova-tutorial/
+├── project/                    # Main project folder (TIER Protocol 4.0)
+│   ├── Data/                   # Data files (Input, Analysis, Intermediate)
+│   ├── Scripts/                # R scripts for data processing and analysis
+│   ├── Output/                 # Generated results, figures, and tables
+│   ├── *.qmd                   # Quarto source files for the tutorial
+│   └── README.md               # Project documentation
+├── docs/                       # Rendered website (HTML output)
+├── .github/workflows/          # GitHub Actions for CI/CD
+├── Dockerfile                  # Container definition for reproducibility
+├── renv/                       # R package management (renv)
+├── _quarto.yml                 # Quarto configuration
+├── references.bib              # Bibliography in BibTeX format
+├── apa7ed.csl                  # Citation style (APA 7th edition)
+└── README.md                   # This file
+```
+
+## Getting Started
+
+### Prerequisites
+
+- [R](https://cran.r-project.org/) (≥ 4.5.0)
+- [RStudio](https://posit.co/download/rstudio-desktop/) (recommended)
+- [Quarto](https://quarto.org/docs/get-started/) (≥ 1.3)
+- [Docker](https://www.docker.com/) (optional, for containerized reproducibility)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/phdpablo/anova-tutorial.git
+   cd anova-tutorial
+   ```
+
+2. **Restore R package environment:**
+   ```r
+   # In R console
+   renv::restore()
+   ```
+
+3. **Render the tutorial:**
+   ```bash
+   quarto render
+   ```
+
+### Using Docker (Recommended for Full Reproducibility)
+
+```bash
+# Build the Docker image
+docker build -t anova-tutorial .
+
+# Run the container
+docker run -p 8787:8787 anova-tutorial
+
+# Access RStudio Server at http://localhost:8787
+```
+
+## Usage
+
+### Viewing the Tutorial
+
+The rendered tutorial is available online at: [https://phdpablo.github.io/anova-tutorial/](https://phdpablo.github.io/anova-tutorial/)
+
+### Running Analyses Locally
+
+1. Open the R project in RStudio: `anova-tutorial.Rproj`
+2. Navigate to the `project/` folder
+3. Open any `.qmd` file to view/edit tutorial content
+4. Run code chunks interactively or render the entire document
+
+### Modifying Content
+
+- **Tutorial Content:** Edit `.qmd` files in the root and `project/` directories
+- **Data Processing:** Modify scripts in `project/Scripts/`
+- **Configuration:** Adjust settings in `_quarto.yml`
+- **References:** Add citations to `references.bib`
+
+## Methodology
+
+This project follows the [TIER Protocol 4.0](https://www.projecttier.org/tier-protocol/protocol-4-0/) for organizing reproducible research and adopts open science principles as outlined in:
+
+- Limongi, R., & Rogers, P. (2025). Open Science in Three Acts: Foundations, Practice, and Implementation. *BAR - Brazilian Administration Review*, 22(1-3).
+
+## Contributing
+
+We welcome contributions! Please:
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## Citation
+
+If you use this tutorial in your research or teaching, please cite:
+
+```bibtex
+@article{georgeto2024a,
+  title = {Applying ANOVA in Crossover Trials},
+  author = {Georgeto, Sérgio Murilo and Rogers, Pablo},
+  year = {2024},
+  publisher = {OSF},
+  doi = {10.17605/OSF.IO/3RXF2},
+  url = {https://osf.io/3rxf2/}
+}
+```
+
+**APA Format:**  
+Georgeto, S. M., & Rogers, P. (2024). *Applying ANOVA in Crossover Trials*. OSF. https://doi.org/10.17605/OSF.IO/3RXF2
+
+## Related Projects
+
+- **Article Template (ARTE):** [https://phdpablo.github.io/article-template/](https://phdpablo.github.io/article-template/)
+- **GEE in Crossover Studies:** [https://doi.org/10.17605/OSF.IO/MU67G](https://doi.org/10.17605/OSF.IO/MU67G)
+
+## License
+
+This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+## Authors
+
+- **Sérgio Murilo Georgeto** - *Principal Investigator*
+- **Pablo Rogers** - *Co-Investigator* - [Website](https://www.phdpablo.com)
+
+## Acknowledgments
+
+- Built with [Quarto](https://quarto.org/)
+- Follows the [TIER Protocol](https://www.projecttier.org/) for reproducible research
+- Inspired by open science principles and practices
+- Template based on [ARTE](https://github.com/phdpablo/article-template)
+
+## Contact
+
+For questions or feedback, please [open an issue](https://github.com/phdpablo/anova-tutorial/issues) or contact the authors through the [OSF project page](https://osf.io/3rxf2/).
+
+---
+
+**Status:** 🚧 In Development
+
+**Last Updated:** January 2026
