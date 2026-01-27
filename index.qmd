@@ -1,9 +1,11 @@
 # Abstract {.unnumbered .unlisted}
 
-The goal of this study is to conduct thorough research on the use of ANOVA Crossover in randomized clinical trials related to physiotherapy and rehabilitation. Creating an application tutorial in the R environment is the primary goal.
+This dynamic and reproducible tutorial is part of a broader research initiative on applying ANOVA in crossover trials within the context of randomized clinical trials related to physiotherapy and rehabilitation [@georgeto2024a; @georgeto2024b; @rogers2024d]. The primary goal is to provide a comprehensive application tutorial in the R environment, demonstrating best practices for analyzing crossover designs using analysis of variance techniques.
 
-**Key-words:** Quantitative Methods, ANOVA, Crossover Trials, Crossover ANOVA.
+This project adopts open science principles and reproducible research practices as outlined by @limongi2025a, @limongi2025b, and @rogers2025, ensuring transparency, accessibility, and replicability of all analyses and results. The tutorial integrates theoretical foundations with practical implementation, offering researchers and practitioners a hands-on guide for conducting rigorous statistical analyses in crossover clinical trials.
 
-**How cite this project?**
+**Keywords:** Quantitative Methods, ANOVA, Crossover Trials, Crossover ANOVA, Reproducible Research, Open Science.
 
-Georgeto, S. M., & Rogers, P. (2024). Applying ANOVA in Crossover Trials. <https://doi.org/10.17605/OSF.IO/3RXF2>
+**How to cite this project?**
+
+Georgeto, S. M., & Rogers, P. (2024). Applying ANOVA in Crossover Trials. https://doi.org/10.17605/OSF.IO/3RXF2
