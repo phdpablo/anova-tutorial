@@ -17,6 +17,5 @@ docs/
 
 # Management
 deploy.sh
-adm/
-!adm/README.md
+Adm/
 /.quarto/
